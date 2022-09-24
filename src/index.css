@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100&display=swap');
+
+:root {
+    --primary-text: #050505;
+    --secondary-text: #65676b;
+    --accent: hsl(214, 89%, 52%);
+    --primary-deemphasized-button-text: #1877f2;
+    --comment-background: #f0f2f5;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Kanit', sans-serif;
+}
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
