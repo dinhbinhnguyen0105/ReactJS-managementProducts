@@ -1,4 +1,5 @@
 .navigation {
     width: 360px;
+    padding-left: 20px;
     background-color: var(--comment-background);
 }

@@ -4,6 +4,7 @@
     --primary-text: #050505;
     --secondary-text: #65676b;
     --accent: hsl(214, 89%, 52%);
+    --divider: #ced0d4;
     --primary-deemphasized-button-text: #1877f2;
     --comment-background: #f0f2f5;
 }
