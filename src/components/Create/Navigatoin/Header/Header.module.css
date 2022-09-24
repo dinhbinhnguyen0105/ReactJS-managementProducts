@@ -1,8 +1,5 @@
 .header {
-    /* box-sizing: border-box; */
-    height: 80px;
-    padding-top: 20px;
-    margin-right: 20px;
+    height: 50px;
     position: relative;
 }
 .header > h1 {
