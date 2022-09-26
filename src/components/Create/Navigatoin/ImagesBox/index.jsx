@@ -1,32 +1,26 @@
-import React, { useCallback } from 'react';
-import { useDropzone } from 'react-dropzone';
+import React, { useState, useEffect } from 'react';
 import clsx from 'clsx';
+
 import style from './ImagesBox.module.css';
-
-function MyDropzone() {
-    const onDrop = useCallback((acceptedFiles) => {
-        const a = URL.createObjectURL(acceptedFiles[0]);
-        console.log(a);
-    }, []);
-    const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
-
-    return (
-        <div {...getRootProps()} className={clsx(style.dropZone)}>
-            <input {...getInputProps()} />
-            {isDragActive ? (
-                <p>Drop the file here ...</p>
-            ) : (
-                <p>Drag 'n' drop sime files here, or click to select files</p>
-            )}
-        </div>
-    );
-}
+import DropBox from './DropBox';
+import DropCard from './DropCard';
+import ImageCard from './ImageCard';
 
 function ImagesBox() {
+    const [imageState, setImageState] = useState([]);
     return (
         <div className={clsx(style.imagesBox)}>
-            <p className={clsx(style.header)}>Images</p>
-            <MyDropzone />
+            <p className={clsx(style.imagesBox__header)}>Images</p>
+            {imageState.length > 0 ? (
+                <div className={clsx(style.imagesBox__content)}>
+                    {imageState.map((img, index) => (
+                        <ImageCard key={index} img={img} />
+                    ))}
+                    <DropCard setImagesState={setImageState} />
+                </div>
+            ) : (
+                <DropBox setImagesState={setImageState} />
+            )}
         </div>
     );
 }
